@@ -1,7 +1,7 @@
 <?php
 namespace Gather;
 
-function collection(array $array = []): Collect
+function collection(array $array = []): Gather
 {
-    return new Collect($array);
+    return new Gather($array);
 }

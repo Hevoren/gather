@@ -31,12 +31,12 @@ class Gather
         return $this->array;
     }
 
-    public function map(callable $callback): Collect
+    public function map(callable $callback): Gather
     {
         return new self(array_map($callback, $this->array));
     }
 
-    public function each(callable $callback, ...$args): Collect
+    public function each(callable $callback, ...$args): Gather
     {
         foreach ($this->array as $key => $item) {
             $callback($item, $key, ...$args);
@@ -44,7 +44,7 @@ class Gather
         return $this;
     }
 
-    public function push($value, $key = null): Collect
+    public function push($value, $key = null): Gather
     {
         if (gettype($value) === 'array') {
             $value = new self($value);
@@ -57,25 +57,25 @@ class Gather
         return $this;
     }
 
-    public function unshift($value): Collect
+    public function unshift($value): Gather
     {
         array_unshift($this->array, $value);
         return $this;
     }
 
-    public function shift(): Collect
+    public function shift(): Gather
     {
         array_shift($this->array);
         return $this;
     }
 
-    public function pop(): Collect
+    public function pop(): Gather
     {
         array_pop($this->array);
         return $this;
     }
 
-    public function splice($idx, $length = 1): Collect
+    public function splice($idx, $length = 1): Gather
     {
         array_splice($idx, $length);
         return $this;
