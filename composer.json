@@ -1,0 +1,24 @@
+{
+    "name": "hevoren/gather",
+    "description": "My package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hevoren",
+            "email": "fifaultimateamfifa15@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Collect\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
